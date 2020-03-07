@@ -1,0 +1,415 @@
+/*header层样式开始*/
+.header{
+	height: 58px;
+	line-height: 58px;
+	background: #191d3a;
+}
+.header .logo h1 a{
+	background:url(../images/logo.png);
+	font-size:0;
+	width: 157px;
+	height: 35px;
+	display: block;
+	margin-top: 12px;
+	margin-right: 48px;
+}
+.header .nav ul li{
+	float: left;
+	width: 85px;
+	border-right:1px solid #252947;
+	text-align: center;
+}
+.header .nav ul li:first-child{
+	background: #252947;
+}
+.header .nav ul li:first-child a{
+	color:white;
+}
+.header .nav ul li a{
+	display: block;
+}
+.header .jrwm{
+	width: 100px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	background: #38b774;
+	border-radius: 5px;
+	margin-left: 9px;
+	margin-top: 12px;
+	margin-right: 90px;
+}
+.header .jrwm a{
+	color:white;
+	display: block;
+}
+.header .language a{
+	float: left;
+}
+.header .language a:first-child{
+	margin-right: 14px;
+	color:#38b774;
+}
+/*header层样式结束*/
+
+
+/*轮播图样式开始*/
+.banner{
+	background: url(../images/banner.jpg) no-repeat #191d3a center top;
+	height: 460px;
+}
+.banner .w{
+	position: relative;
+	height: 100%;
+}
+.banner .banner_box{
+	position: absolute;
+	right: 0;
+	top: 82px;
+	width: 462px;
+}
+.banner .banner_box .online_game{
+	float: right;
+	width: 115px;
+}
+.banner .banner_box .online_game .top{
+	height: 37px;
+	background: url(../images/online.png);
+	line-height: 37px;
+	text-indent: 1em;
+}
+.banner .banner_box .online_game .bottom{
+	background: white;
+	overflow: hidden;
+	border-radius: 0 0 20px 20px;
+	/*隐藏元素*/
+	display: none;
+}
+.banner .banner_box .online_game .bottom a{
+	width: 25px;
+	height: 25px;
+	background: url(../images/online.png);
+	float: left;
+	margin-right: 8px;
+	margin-bottom: 12px;
+}
+.banner .banner_box .online_game .bottom a:nth-child(1){
+	background-position: -1px bottom;
+	margin-left: 14px;
+}
+.banner .banner_box .online_game .bottom a:nth-child(2){
+	background-position: -50px bottom;
+}
+.banner .banner_box .online_game .bottom a:nth-child(3){
+	background-position: -100px bottom;
+}
+.banner .banner_box .online_game:hover .top{
+	background: url(../images/online.png) right top;
+}
+.banner .banner_box .online_game:hover .bottom{
+	display: block;
+}
+.banner .banner_box .game_desc{
+	margin-top: 86px;
+	margin-bottom: 36px;
+}
+.banner .banner_box .download_game .title{
+	font-size:18px;
+	font-weight: bold;
+	background: url(../images/download.png) no-repeat 6px 5px;
+	padding-left: 30px;
+	margin-bottom: 18px;
+}
+.banner .banner_box .download_game ul li{
+	width: 83px;
+	height: 106px;
+	background: rgba(255,255,255,0.8) url(../images/pad.png) no-repeat;
+	float: left;
+	margin-right: 2px;
+	text-align: center;
+	line-height: 170px;
+}
+.banner .banner_box .download_game ul li:nth-child(1){
+	background-position: 30px -181px;
+}
+.banner .banner_box .download_game ul li:nth-child(2){
+	background-position: 30px 18px;
+}
+.banner .banner_box .download_game ul li:nth-child(3){
+	background-position: 23px -82px;
+}
+.banner .banner_box .download_game ul li:nth-child(4){
+	background-position: 23px -484px;
+}
+.banner .banner_box .download_game ul li:hover{
+	background: #ffffff url(../images/pad.png) no-repeat;
+}
+.banner .banner_box .download_game ul li:nth-child(1):hover{
+	background-position: 30px -181px;
+}
+.banner .banner_box .download_game ul li:nth-child(2):hover{
+	background-position: 30px 18px;
+}
+.banner .banner_box .download_game ul li:nth-child(3):hover{
+	background-position: 23px -82px;
+}
+.banner .banner_box .download_game ul li:nth-child(4):hover{
+	background-position: 23px -484px;
+}
+.banner .banner_box .download_game ul li a{
+	color:#444866;
+	display: block;
+}
+.banner .banner_box .download_game .ewm{
+	width: 111px;
+	height: 106px;
+	background: rgba(255,255,255,0.8);
+	float: left;
+	text-align: center;
+}
+.banner .banner_box .download_game .ewm img{
+	margin-top: 13px;
+}
+.banner .small_dian{
+	height: 12px;
+	width: 94px;
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -47px;
+}
+.banner .small_dian li{
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.5);
+	margin-right: 15px;
+	float: left;
+	/*鼠标模拟小手*/
+	cursor: pointer;
+}
+.banner .small_dian li:last-child{
+	margin-right: 0;
+}
+.banner .small_dian li:first-child{
+	background: white;
+}
+.banner .small_dian li:hover{
+	background: white;
+}
+/*轮播图样式结束*/
+
+/*博雅视频列表样式开始*/
+.boya_video_list{
+	margin-top: 50px;
+}
+.boya_video_list ul {
+	display: none;
+}
+.boya_video_list ul li{
+	float: left;
+	width: 218px;
+	margin-right: 43px;
+	text-align: center;
+}
+.boya_video_list ul li:last-child{
+	width: 217px;
+	margin-right: 0;
+}
+.boya_video_list ul li a img{
+	width: 100%;
+}
+.boya_video_list ul li a .desc{
+	height: 63px;
+	overflow: hidden;
+	/*1倍行高*/
+	line-height: 1;
+}
+.boya_video_list ul li a .desc h3{
+	font-size:14px;
+	margin-top: 9px;
+	margin-bottom: 18px;
+	color:#444866;
+}
+.boya_video_list ul li a .desc p{
+	font-size:12px;
+	color:#38b774;
+}
+.boya_video_list ul li a .desc p span{
+	background: url(../images/arrow.png) no-repeat right center;
+	padding-right: 12px;
+}
+.boya_video_list ul li a:hover .desc{
+	background: #45bc7d;
+}
+.boya_video_list ul li a:hover .desc h3{
+	color:white;
+}
+.boya_video_list ul li a:hover .desc p{
+	color:white;
+}
+.boya_video_list ul li a:hover .desc p span{
+	background: url(../images/arrow_hover.png) no-repeat right center;
+	padding-right: 12px;
+}
+.boya_video_list ul li a:hover img{
+	/*opacity设置元素的透明度,取值0~1之间的所有小数,0代表完全透明 1代表完成不透明*/
+	opacity: 0.8;
+}
+/*博雅视频列表样式结束*/
+
+
+/*一条横线两个点样式开始*/
+.one_line_and_two_dian{
+	border-top: 1px solid #dbe1e7;
+	margin-top: 38px;
+}
+.one_line_and_two_dian ul {
+	background: white;
+	width: 67px;
+	margin:0 auto;
+	margin-top: -6px;
+}
+.one_line_and_two_dian ul li{
+	width: 11px;
+	height: 11px;
+	background: #b5c0cb;
+	border-radius: 50%;
+	float: left;
+	margin-right: 14px;
+	cursor: pointer;
+}
+.one_line_and_two_dian ul li:first-child{
+	margin-left: 17px;
+}
+.one_line_and_two_dian ul .active{
+	background: #2fbc71;
+}
+/*一条横线两个点样式结束*/
+
+
+/*博雅内容层样式开始*/
+.boya_content{
+	margin-top: 53px;
+	height: 364px;
+	background: url(../images/indexmainbg.jpg);
+}
+.boya_content .boya_news{
+	width: 500px;
+	height: 310px;
+	background: url(../images/bynewsbg.jpg);
+	position: relative;
+}
+.boya_content .more{
+	width: 64px;
+	height: 26px;
+	text-align: center;
+	line-height: 20px;
+	border-radius: 5px;
+	position: absolute;
+	left: 217px;
+	top: 40px;
+	font-size:12px;
+}
+.boya_content .boya_news .more{
+	border:1px solid #32bf71;
+	color:#32bf71;
+}
+.boya_content .boya_news .more:hover{
+	color:white;
+	background: #32bf71;
+}
+.boya_content .boya_news ul{
+	margin-top: 117px;
+	padding:0 20px;
+}
+.boya_content .boya_news ul li{
+	height: 47px;
+	line-height: 47px;
+	border-bottom: 1px solid #dbe1e7;
+}
+.boya_content .boya_news ul li a{
+	/*
+		实现省略号步骤
+		第一步:设置一个固定的宽度;
+		第二步:
+		white-space: nowrap;设置内容不自动换行
+		overflow: hidden;设置超出固定宽度以后的内容隐藏
+		text-overflow: ellipsis;超出部分使用省略号代替
+	*/
+	width: 394px;
+	float: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color:#444866;
+}
+.boya_content .boya_news ul li a:hover{
+	color:#30bc73;
+}
+.boya_content .boya_news ul li span{
+	float: right;
+	color:#afbecf;
+}
+
+.boya_content .boya_joins .more{
+	border:1px solid white;
+	color:white;
+}
+.boya_content .boya_joins .more:hover{
+	color:#32bf71;
+	background: white;
+}
+.boya_content .boya_joins{
+	width: 500px;
+	height: 310px;
+	background: url(../images/byshzpbg.jpg);
+	position: relative;
+}
+.boya_content .boya_joins .shzp_top{
+	color:white;
+	float: left;
+	margin-left: 80px;
+	margin-top: 40px;
+}
+.boya_content .boya_joins .shzp_top h2{
+	font-size:24px;
+}
+.boya_content .boya_joins .shzp_bottom{
+	width: 305px;
+	margin-left: 20px;
+	margin-top: 26px;
+	color:white;
+	line-height: 1;
+}
+.boya_content .boya_joins .shzp_bottom h5{
+	font-size:16px;
+	margin-bottom: 8px;
+}
+.boya_content .boya_joins .shzp_bottom ul li{
+	height: 34px;
+	line-height: 34px;
+	border-bottom: 1px solid #6fdea3;
+}
+.boya_content .boya_joins .shzp_bottom ul li a{
+	color:white;
+}
+/*博雅内容层样式结束*/
+
+/*底部样式开始*/
+.footer{
+	height: 171px;
+	background: #191d3a;
+	color:#6c6e7e;
+	font-size:12px;
+	padding-top: 21px;
+}
+.footer p{
+	height: 50px;
+	line-height: 50px;
+}
+.footer img{
+	height: 52px;
+	vertical-align: middle;
+}
+/*底部样式结束*/

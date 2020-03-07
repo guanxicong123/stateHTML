@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下载列表</title>
+	<style>
+		body ul li{
+			padding: 0;
+			margin: 0;
+		}
+		a{
+			text-decoration: none;;
+		}
+		li{
+			list-style: none;
+		}
+		.banner{
+			width: 1000px;
+		}
+		.banner ul{
+			/*height: 106px;*/
+			/*font-size: 0;*/
+
+			/*用margin来水平居中还没有用text-aligh:center;来居中好用*/
+			/*有text-align还不用给ul重新设置一个宽.*/
+			/*但是会把所以内容都居中*/
+			text-align: center;
+			/*width: 400px;
+			margin:50px auto;*/
+		}
+		.banner ul li{
+			height: 106px;
+			width: 83px;
+			background: skyblue;
+			/*如果ul上用了text-align,下面li基本就不用加了*/
+			/*text-align: center;*/
+			font-size: 12px;
+			/*text-align: center;*/
+			display: inline-block;
+			/*float: left;*/
+		}
+		.banner ul li a{
+			/*float: left;*/
+			display: block;
+			height: 106px;
+			/*加一个overflow给a,防止下面a.div的margin值影响到a*/
+			/*如果一个父元素发生了子元素带来的不好影响,就加一个overflow把它清除了.*/
+			overflow: hidden;
+		}
+		.banner ul li .iPad{
+			/*后面加了class名之后,不用加li的first-child之类的了.*/
+			width: 40px;
+			height: 43px;
+			margin: 18px auto;
+			background: url(images/pad.png) 0px -96px;
+		}
+		.banner ul li .iPhone{
+			/*display: block;*/
+			width: 29px;
+			height: 43px;
+			margin: 18px auto;
+			background: url(images/pad.png) 0px -196px;
+		}
+		.banner ul li .Android{
+			/*display: block;*/
+			width: 38px;
+			height: 42px;
+			margin: 18px auto;
+			background: url(images/pad.png) 0px -396px;
+		}
+		.banner ul li .TV{
+			/*display: block;*/
+			width: 45px;
+
+			height: 36px;
+			margin: 18px auto;
+			border: 1px solid green;
+			background: url(images/pad.png) 0px -504px;
+		}
+		.banner ul li span{
+			border:1px solid red;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="banner">
+		<ul>
+			<li><a href="#">
+					<div class="iPad"></div>
+					<span>iPad</span>
+				</a>
+			</li>
+			<li><a href="#">
+					<div class="iPhone"></div>
+					<span>iPhone</span>
+				</a>
+			</li>
+			<li><a href="#">
+					<div class="Android"></div>
+					<span>Android</span>
+				</a>
+			</li>
+			<li><a href="#">
+					<div class="TV"></div>
+					<span>TV</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

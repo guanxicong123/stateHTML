@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		img{
+			display: inline-block;
+			text-align: center;
+		}
+		p{
+			/*把P设置成inline-block还是不可以做到图片环绕,如果不设置float,只是单单通过img标签里的align属性.必须设置成inline就可以了*/
+			/*display: inline-block;*/
+			display:inline;
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+
+		<!-- 实现图片环绕,还可以在img标签中设置align属性.但文字必须是inline -->
+		<img src="images/shadow.png" align="right">
+		<p>大山里一已一已一已一已一已一已放哪时间节点撒娇你的空间大姐姐 大门口三十多款看电视吗肯定是那科室代码看到你们仨快乐看到卡马克思的科目的看书打开Sam打开马上科目的看法卡萨凭什么大开什么店<p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+排版:
+要注意先在各个部分的盒子里面确定高度,给每一个盒子一个背景颜色.更清晰的排版
+如果需要版心的模块,就用版心,用版心如果是整一块模块都是版心只需要加多一个属性名,如果有背景图是100%宽的,而文字或内容需要版心位置的,就需要另外嵌套一个div.w ,
+
+最好要计算好每一块模块的高度,不要超出,最好是相等,如果少于,背景颜色补上.
+
+
+
+1.在li里面去设置li里面a的字体颜色无效
+因为a标签自己也有一个默认color,因为就近原则,所以在li中设置a的字体是没有效果的.
+设置字体的颜色,都要去到嵌套这些字体本身的标签去设置
+2.text-align:center; line-height;一般都是设置在li中.
+
+3.如果要a占满整个div,一般都是用display:block; 而不是inline-block
+
+
+
+banner:
+4,
+	div{
+			width: 100px;
+			height: 100px;
+			text-align: center;
+			border: 2px solid red;
+			line-height: 100px;
+		}
+	<div>
+		<img src="images/bd1.jpg" width="20" height="20">
+	</div>
+
+	也可以用text-align 和line-height来居中的是img,
+	背景图片只能用margin
+
+5.相对定位还是模糊.
+
+6.不要滥用position,
+
+7.如果其子元素会用margin出现了问题,就想给父元素加一个overflow:hidden;
+
+8.两个div之间上下衔接有空隙,很有可能是高度没有配合好.通常出现在一个display:none的一个下拉框的出现的hover的那个div之间的衔接.
+
+9.overflow:hidden就是为了解决他的儿子都float起来的,自己就没有内容去占位置来设置样式.如background-color
+
+10.很少会出现要margin设置值为负的,如果出现负或者过大,大多数都是因为排版不好,大盒子的宽高没有设置好
+
+11./*这是消除inline-block的间隙*/
+			font-size: 0;
+
+12.还要注意如果出现抠图的动作,在精灵图允许的情况下,这个背景图片可显示的大小框最好大小是相同的.
+
+13./*这个可以清楚图片下面会出现空隙的问题*/
+			/*vertical-align: bottom;*/
+
+14.先给ul加一个div,然后给这个div的height= 0,再给一个border-top,就会出来一条线,然后在用一个ul居中,设置宽高,是为了盖住这条线的一部分.,
+		怎么盖住,就是用ul的margin为负值,就会溢出这个div,就会出现盖住border的情况,
+		然后就是设置li了
+
+15.如果这里不加一个height,ul就没有高,背景颜色就显示不出来,就盖不住上面line的border,实现不出来效果*/
+.content .line .clearfix{
+			height: 20px;
+
+
+16.文字一行显示不完,用省略号(...)代替溢出的内容
+	.content .n_p .new ul li a{
+			/*这里的a是设置文本的最大宽度*/
+			width: 394px;
+			/*要想文本收起来,就必须把a标签float起来*/
+			float: left;
+			/*nowrap	文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+			默认空白会被浏览器忽略*/
+			/*这些都直接给文字。*/
+			white-space: nowrap;
+			/*overflow是溢出的意识.hidden就是把溢出的隐藏.*/
+			/*不单单只有解除子元素全部float的问题*/
+			overflow: hidden;
+			/*ellipsis	显示省略符号来代表被修剪的文本。*/
+			/*一定要配合overflow*/
+			text-overflow: ellipsis;
+			/*三个联合用*/
+			color: #444866
+		}
+
+
+17.先设置li的内容,然后确定li的height之后,就再来设置ul应该要的高,阻止因为float出现的块不占位的问题,与相邻块的距离,最好还是在一个块中去设置
+
+18.基本页脚的那些'|'都是用文本写上去的,而不是border
+
+19.导航栏可能出现的按钮块,还是用另一个标签包含把,不用li包在一起

@@ -1,0 +1,30 @@
+
+
+美丽说笔记
+
+复用,用所有span来实现精灵图,然后再分开一个个设置精灵图位置
+复用,下拉框,都是一个样式的,都可以给同一个class,然后框的高度用内容撑开,就不会多处多余的来
+
+
+浮动之前,都要先包好盒子,尽量都在一个盒子里面去float,不要去影响全局的布局,
+
+如果向让多个li中的一部分样式边,这个样式名要加在通栏的类名	前面,
+
+
+右浮的时候.谁先浮,谁就在最右边.
+
+/*因为后面要设外边距,不能实现居中,最前面那个*/
+			margin:15px auto 0;
+
+
+把字体旋转:/*-ms-transform:rotate(90deg)  IE9*/
+			/*-moz-transform:rotate(90deg);  Firefox*/
+			/*-webkit-transform: rotate(90deg); safari和chrome*/
+			/*-o-transform:rotate(90deg); opera*/
+			transform: rotate(90deg);
+
+
+直接把li的width设置成14px,把字体挤成一个字一行
+
+用a的padding来撑大a,实现可以给一个边框
+因为a的display会撑满整个li,所以只能反转,把a撑得比li大

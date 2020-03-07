@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>博雅互动首页</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.w{
+			width: 1000px;
+			margin: 0 auto;
+
+		}
+		a{
+			text-decoration: none;
+		}
+
+		li{
+			list-style: none;
+		}
+
+		.none{
+			/*控制距不显示*/
+			display: none;
+			/*background: green;*/
+		}
+		.box{
+			width: 100%;
+
+			/*background-color:#191d3a;*/
+		}
+		.nav{
+			/*width: 1200px;*/
+			height: 57px;
+			background-color:#191d3a;
+			/*background-color: skyblue;*/
+		}
+		.nav img{
+			width: 157px;
+			margin-top: 10px;
+			float: left;
+		}
+		.nav .list{
+			width: 517px;
+			height: 57px;
+			float: left;
+			margin-left: 48px;
+		}
+		.nav .list ul li{
+			width: 85px;
+			height: 57px;
+			float: left;
+			line-height: 57px;
+			text-align: center;
+			border-right: 1px solid #252947;
+			/*在li里面去设置li里面a的字体颜色无效.*/
+			/*color: #818496;*/
+		}
+		.nav .list ul li:first-child{
+			border-left: 1px solid #252947;
+		}
+		.nav .list ul li a{
+			display: block;
+			color: #818496;
+		}
+		.nav .list ul li a:hover{
+			color: #fff;
+		}
+		.nav .join{
+			width: 112px;
+			padding-left: 9px;
+			padding-top: 11px;
+			float: left;
+		}
+		.nav .join a{
+			/*float: left;*/
+			display: block;
+			width: 100px;
+			height: 34px;
+			background: #38b774;
+			border-radius: 5px;
+			color: #fff;
+			text-align: center;
+			line-height: 34px;
+		}
+		.nav a:hover{
+			color: #fff;
+		}
+		.nav .yuyan{
+			float: left;
+			height: 57px;
+			width: 83px;
+			margin-left: 60px;
+			line-height: 57px;
+			text-align: center;
+		}
+		.nav .yuyan a{
+			color: #818496;
+
+		}
+		.nav .yuyan a:hover{
+			color: #fff;
+		}
+		.nav .yuyan a:first-child{
+			color: #30a670;
+			margin-right: 20px;
+
+		}
+		
+		.banner{
+			/*背景图片可以用center居中*/
+			background: url(images/banner.jpg)  no-repeat center top;
+			height: 460px;
+			background-color: green;
+			overflow: hidden;
+			/*position: relative;*/
+		}
+		.banner .b_con{
+			/*margin-top: 80px;*/
+			position:relative;
+			/*top: 100px;*/
+			/*right: -4px;*/
+			margin-top: 60px;
+			left: 541px;
+			overflow: hidden;
+			width: 458px;
+			height: 400px;
+		}
+		.banner .b_con .game_online{
+			position: absolute;
+			/*top: -104px;*/
+			right: 0px;
+
+			background:url(images/online.png) left top;
+			width: 115px;
+			/*两个div之间上下衔接有空隙,很有可能是高度没有配合好.*/
+			height: 36px;
+			line-height: 36px;
+			text-indent: 1em;
+			/*display: block;*/
+			/*background:#fff;*/
+			/*float: left;*/
+		}
+		.banner .b_con .game_online:hover{
+			background: url(images/online.png) right top;
+			/*vertical-align: bottom;*/
+		}
+		.banner .b_con .game_online .down{
+			background-color: #fff;
+			border-radius: 0 0 20px 20px;
+			display: none;
+			/*float: left;*/
+			/*overflow:hidden就是为了解决他的儿子都float起来的,自己就没有内容去占位置来设置样式.如background-color*/
+			overflow: hidden;
+			/*height: */
+		}
+		.banner .b_con .game_online:hover .down{
+			display: block;
+		}
+		.banner .b_con .game_online ul li:nth-child(1) a{
+			display: block;
+			background: url(images/online.png) left bottom ;
+			width: 25px;
+			height: 27px;
+			float: left;
+		}	
+		.banner .b_con .game_online ul li:nth-child(2) a{
+			display: block;
+			/*background来抠图的坐标是负*/
+			background: url(images/online.png) -49px -45px ;
+			width: 25px;
+			height: 25px;
+			float: left;
+		}
+		.banner .b_con .game_online ul li:nth-child(3) a{
+			background: url(images/online.png) -99px -45px ;
+			width: 25px;
+			height: 25px;
+			float: left;
+		}
+		.banner .b_con .game_online ul li a{
+			margin-left: 8px;
+			display: block;
+		}
+		.banner .b_con p{
+			/*很少会出现要margin设置值为负的,如果出现负,大多数都是因为排版不好,大盒子的宽高没有设置好.*/
+			/*margin-top: -29px;
+			/*margin-bottom: 50px;*/
+			margin: 100px 0 30px;
+
+
+		}
+		.banner .b_con .d_title .tubiao{
+			display: inline-block;
+			width: 20px;
+			height: 17px;
+			background: url(images/download.png);
+		}
+		.banner .b_con h3{
+			display: inline-block;
+		}
+		.banner .b_con .don_c{
+			margin-top: 20px;
+			/*border: 1px solid red;*/
+			
+		}
+		.banner .b_con .don_c ul {
+			/*这是消除inline-block的间隙*/
+			font-size: 0;
+			height: 106px;
+
+		}
+		.banner .b_con .don_c ul li{
+			/*如果我用display:inline-block;就会出现这个li水平位置排列不对齐.为什么?*/
+			/*改用了float:left;就正常了*/
+			/*加个overflow:hidden;就可以了,因为li的子元素的高度引起的.*/
+			/*display: inline-block;*/
+			/*margin-top: 0px;*/
+			float: left;
+			margin-right:3px; 
+			height: 106px;
+			width: 83px;
+			background: #fff;
+			text-align: center;
+			line-height: 30px;
+			font-size: 14px;
+			/*overflow: hidden;*/
+			
+		}
+		.banner .b_con .don_c ul li a{
+			display: block;
+			height: 106px;
+			/*我把margin设在里面,a这一块也margin了,说明就是他儿子影响的呀,所以给一个overflow:hidden;给a呀*/
+			overflow: hidden;
+			
+		}
+		/*还要注意如果出现抠图的动作,在精灵图允许的情况下,这个背景图片可显示的大小框最好大小是相同的.*/
+		.banner .b_con .don_c ul li:nth-child(1) a .iPad{
+			/*display: block;*/
+			margin:18px auto;
+			width: 45px;
+			height: 45px;
+			background: url(images/pad.png) 3px -96px;
+		}
+		.banner .b_con .don_c ul li:nth-child(2) a .iPhone{
+			display: block;
+			margin: 18px auto;
+			width: 45px;
+			height: 45px;
+			background: url(images/pad.png) 9px -196px;
+		}
+		.banner .b_con .don_c ul li:nth-child(3) a .Android{
+			display: block;
+			margin: 18px auto;
+			width: 45px;
+			height: 45px;
+			background: url(images/pad.png) 6px -396px;
+		}
+		.banner .b_con .don_c ul li:nth-child(4) a .TV{
+			display: block;
+			margin: 18px auto;
+			width: 45px;
+			height: 45px;
+			background: url(images/pad.png) 2px -500px;
+		}
+		/*.banner .b_con .don_c ul span{
+			display: block;
+		}*/
+		.banner .b_con .don_c ul li:nth-child(5){
+			width: 81px;
+			height: 76px;
+			padding:15px;
+		}
+		.banner .b_con .dian li{
+			display: inline-block;
+			
+			/*background: #db9797;*/
+			/*border-radius: 50%;*/
+			position: relative;
+			top: 118px;
+			right: 532px;
+			margin-right: 10px;
+		}
+		.banner .b_con .dian a{
+			display: block;
+			background: #db9797;
+			border-radius: 50%;
+			width: 13px;
+			height: 13px;
+		}
+		.banner .b_con .dian li:first-child a{
+			background: #fff;
+		}
+		.banner .b_con .dian a:hover{
+			background: #fff;
+		}
+		.content{
+			/*279+442*/
+			height: 700px;
+			overflow: hidden;
+
+			/*background-color: pink;*/
+		}
+		.content .introduction{
+			margin-top: 50px;
+			overflow: hidden;
+			/*display: none;*/
+
+		}
+
+		.content .introduction ul li{
+			width: 218px;
+			height: 189px;
+			text-align: center;
+			float: left;
+			margin-right: 23px;
+		}
+		.content .introduction ul li a{
+			display: block;
+			height: 189px;
+
+		}
+		.content .introduction ul li a h4{
+			color: #444866;
+			margin-bottom: 8px;
+		}
+		.content .introduction ul li a span{
+			color: #38b774;
+			font-size:12px;
+		}
+		.content .introduction ul li a span.bofang_fuhao{
+			display: inline-block;
+			width: 4px;
+			height: 8px;
+			margin-left: 10px;
+			background: url(images/arrow.png);
+		}
+		.content .introduction ul li a:hover{
+			background: #45bc7d;
+		}
+		.content .introduction ul li a:hover h4,
+		.content .introduction ul li a:hover span{
+			color: #fff;
+		}
+		.content .introduction ul li a:hover span.bofang_fuhao{
+			background: url(images/arrow_hover.png);
+		}
+		.content .introduction ul li img{
+			width: 218px;
+			height: 127px;
+			/*这个可以清楚图片下面会出现空隙的问题*/
+			/*vertical-align: bottom;*/
+		}
+		/*.content .int2{
+			display: none;
+		}*/
+		.content .line{
+			border-top: 1px solid #dbe1e7;
+			margin-top: 38px;
+			height: 0;
+			/*float: left;*/
+			clear: both;
+			/*overflow: hidden;*/
+		}
+		/*先给ul加一个div,然后给这个div的height= 0,再给一个border-top,就会出来一条线,然后在用一个ul居中,设置宽高,是为了盖住这条线的一部分.,
+		怎么盖住,就是用ul的margin为负值,就会溢出这个div,就会出现盖住border的情况,
+		然后就是设置li了*/
+		.content .line .clearfix{
+			background: #fff;
+			width: 67px;
+			/*如果这里不加一个height,ul就没有高,背景颜色就显示不出来,就盖不住上面line的border,实现不出来效果*/
+			height: 20px;
+			margin: -6px auto;
+			/*border: 1px solid red;*/
+			/*float: left;*/
+			/*text-align: center;*/
+			/*clear: both;*/
+		}
+		.clearfix:after{
+			/*content: ".";*/
+			/*display: block;*/
+			/*height: 0;*/
+			/*clear: both;*/
+		}
+		.content .line .clearfix li{
+			background: #b5c0cb;
+			width: 11px;
+			height: 11px;
+			border-radius: 50%;
+			cursor: pointer;
+			float: left;
+			margin-left: 17px;
+		}
+		/*.content .line .clearfix li.active{
+			background: green;
+
+		}*/
+		/*.content .line .clearfix li:hover{
+			background: green;
+		}*/
+		
+		.content .n_p{
+			/*margin-top: 65px;*/
+			/*clear: both;*/
+			height: 320px;
+			margin: 65px 0 30px;
+
+		}
+		.content .n_p .new{
+			/*width: 500px;*/
+			width: 50%;
+			height: 201px;
+			position: relative;
+			background: url(images/bynewsbg.jpg) no-repeat;
+			padding-top: 119px;
+			/*top: 65px;*/
+			/*float: left;*/
+			display: inline-block;
+		}
+		.content .n_p .more{
+			position: absolute;
+			border: 1px solid lightgreen;
+			/*overflow: hidden;*/
+			width: 80px;
+			height: 30px;
+			text-align: center;
+			/*float: left;*/
+			line-height: 20px;
+			/*div放下面,top:-274px; left:-175px;*/
+			top: 36px;
+			left:250px;
+			margin: 
+		}
+		.content .n_p .more a{
+			/*width: 70px;*/
+			/*margin: 0 auto;*/
+			display: block;
+			/*position: relative;*/
+			height: 30px;
+			/*width: 40px;*/
+			/*border: 2px solid red;*/
+		}
+		.content .n_p .new ul{
+			/*clear: both;*/
+			
+		}
+		.content .n_p .new ul li{
+			margin:0 auto;
+			width: 465px;
+			/*display: list-item;*/
+			height: 47px;
+			/*border: 2px solid red;*/
+			border-bottom: 1px solid #dbe1e7;
+			line-height: 50px;
+			/*float: left;*/
+			/*text-overflow: ellipsis;*/
+			/*text-align: center;*/
+
+		}
+		.content .n_p .new ul li a{
+			/*这里的a是设置文本的最大宽度*/
+			width: 394px;
+			/*要想文本收起来,就必须把a标签float起来*/
+			float: left;
+			/*nowrap	文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。
+			默认空白会被浏览器忽略*/
+			/*这些都直接给文字。*/
+			white-space: nowrap;
+			/*overflow是溢出的意识.hidden就是把溢出的隐藏.*/
+			/*不单单只有解除子元素全部float的问题*/
+			overflow: hidden;
+			/*ellipsis	显示省略符号来代表被修剪的文本。*/
+			/*一定要配合overflow*/
+			text-overflow: ellipsis;
+			/*三个联合用*/
+			color: #444866
+		}
+		.content .n_p .new ul li:first-child a{
+			/*margin-left: -65px;*/
+		}
+		.content .n_p .new ul li a:hover{
+			color: #30bc73;
+
+		}
+		.content .n_p .new ul li span{
+			margin-left: 10px;
+			font-size:14px;
+			color: #afbecf;
+			
+		}
+		.content .n_p .position{
+			/*position: relative;*/
+			/*top: 65px;*/
+			height: 320px;
+			width: 500px;
+			background: url(images/byshzpbg.jpg) no-repeat;
+			float: right;
+			/*display: inline-block;*/
+		}
+		.content .n_p .position .title{
+			position: relative;
+			top: 35px;
+			left: 80px;
+			color: #fff;
+
+		}
+		.content .n_p .position .title h1{
+			color: #fff;
+		}
+
+		.content .n_p .position .zhaoping{
+			position: relative;
+			left: 25px;
+			top: 48px;
+		}
+		.content .n_p .position .zhaoping h4{
+			/*float: right;*/
+			/*left: 800px;*/
+			color: #ffffff;
+			margin-bottom: 15px;
+		}
+		.content .n_p .position .zhaoping ul{
+
+		}
+		.content .n_p .position .zhaoping ul li{
+			height: 38px;
+			line-height: 38px;
+			width: 300px;
+			border-bottom: 1px solid #dbe1e7;
+		}
+		.content .n_p .position .zhaoping ul li a{
+			color: #fff;
+		}
+
+		.footer{
+			height: 192px;
+			background-color: #191d3a;
+			overflow: hidden;
+		}
+		.footer .text{
+			margin-top: 30px;
+		}
+		.footer ul{
+			/*先设置li的内容,然后确定li的height之后,就再来设置ul应该要的高,阻止因为float出现的块不占位的问题,与相邻块的距离,最好还是在一个块中去设置,*/
+			height: 16px;
+			margin-bottom: 40px;
+			
+		}
+		.footer ul li{
+			/*width: 70px;*/
+			color: #5f6e68;
+			font-size: 12px;
+			/*基本页脚的那些'|'都是用文本写上去的,而不是border*/
+			/*border-right: 1px solid #5f6e68;*/
+			float: left;
+			text-align: center;
+			/*overflow: hidden;*/
+		}
+		.footer ul li:last-child{
+			border: none;
+		}
+		.footer ul li a{
+			color: #5f6e68;
+		}
+		.footer ul li a:hover{
+			color: #fff;
+		}
+		.footer p{
+			/*text-indent: 8px;*/
+			font-size: 12px;
+			clear: both;
+			color: #5f6e68;
+			margin-top: 40px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="nav">
+			<div class="w">
+				<img src="images/logo.png" >
+				<div class="list">
+					<ul>
+						<li><a href="#">首页</a></li>
+						<li><a href="#">博雅游戏</a></li>
+						<li><a href="#">博雅新闻</a></li>
+						<li><a href="#">关于我们</a></li>
+						<li><a href="#">客服中心</a></li>
+						<li><a href="#">投资者关于</a></li>
+					</ul>
+				</div>
+					<!-- <a href="#">加入我们</a> -->
+				<div class="join">
+					<a href="#">加入我们</a>
+				</div>
+				<div class="yuyan">
+					<a href="#">中文</a>
+					<a href="#">EN</a>
+				</div>
+			</div>
+		</div>
+		<div class="banner">
+			<div class="w">
+				<div class="b_con">
+					<div class="game_online"><span>在线游戏</span>
+						<div class="down">
+							<ul>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+							</ul>
+
+						</div>
+
+					</div>
+
+					<p>风靡国内外的斗地主游戏，超低流量，玩法多样，居家旅行必备良品</p>
+					<div class="d_title">
+						<span class="tubiao"></span>
+						<h3>下载游戏:</h3>
+					</div>
+					<div class="don_c">
+						<ul>
+							<li><a href="#" class="iPad"><div class="iPad"></div><span>iPad</span></a></li>
+							<li><a href="#" class="iPhone"><span class="iPhone"></span><span>iPhone</span></a></li>
+							<li><a href="#" class="Android"><span class="Android"></span><span>Android</span></a></li>
+							<li><a href="#" class="TV"><span class="TV"></span><span>TV</span></a></li>
+							<li><img src="images/ewm.png"></li>
+						</ul>
+					</div>
+					<ul class="dian">
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>		
+
+			</div>
+		</div>
+			
+		<div class="content w">
+			
+				<div class="introduction active" id="int1">
+					<ul>
+						<li><a href="#">
+							<img src="images/bd1.jpg" >
+							<h4>博雅互动宣传视频</h4>
+							<span>点击播放</span><span class="bofang_fuhao"></span>
+						</li></a>
+						<li><a href="#">
+							<img src="images/bd2.jpg" >
+							<h4>博雅互动宣传视频</h4>
+							<span>点击播放</span><span class="bofang_fuhao"></span>
+						</li></a>
+						<li><a href="#">
+							<img src="images/bd3.jpg" >
+							<h4>麻将全集</h4>
+							<span>MAGJONG GAMES</span><span class="bofang_fuhao"></span>
+						</li></a>
+						<li><a href="#">
+							<img src="images/bd4.jpg" >
+							<h4>中国象棋</h4>
+							<span>FOURLANDLORDS</span><span class="bofang_fuhao"></span>
+						</li></a>
+					</ul>
+				</div>
+				<div class="introduction none" id="int2">
+					<ul>
+						<li><a href="#">
+							<img src="images/bd5.jpg" >
+							<h4>博雅棋牌</h4>
+							<span>BOYAA CHESS</span><span class="bofang_fuhao"></span>
+						</li></a>
+						<li><a href="#">
+							<img src="images/bd6.jpg" >
+							<h4>四川麻将</h4>
+							<span>SICHUAN MAHJONG</span><span class="bofang_fuhao"></span>
+						</li></a>
+						<li><a href="#">
+							<img src="images/bd7.jpg" >
+							<h4>四川棋牌</h4>
+							<span>BOYAA SZECHWAN GAME</span><span class="bofang_fuhao"></span>
+						</li></a>
+						<li><a href="#">
+							<img src="images/bd8.jpg" >
+							<h4>四人斗地主</h4>
+							<span>FOURLANDLORDS</span><span class="bofang_fuhao"></span>
+						</li></a>
+					</ul>
+				</div>
+				<div class="line">
+					<ul class="clearfix">
+						<li class="active1" id="dian1"></li>
+						<li id="dian2"></li>
+					</ul>
+				</div>
+
+				<div class="n_p">
+
+					<div class="new">
+						<!-- MOTE -->
+						<div class="more">
+							<a href="#">MORE<sup>+</sup></a>
+						</div>
+						<!-- <img src="images/bynewsbg.jpg" > -->
+						<ul>
+							<!-- 布局可以不嵌入太多标签,就最好不要太多标签,a里面也可以写文字,就不用再另外再写一个p标签. -->
+							<li><a href="#">博雅互动公布2018年第三季度业绩，善用成本费用控制政策，在考验中做好防守</a><span>11/22</span></li>
+							<li><a href="#">博雅互动公布2018年第三季度业绩，成本费用控制良好，股权投资收益增加，积极打造高质量的游戏及赛事产品</a><span>11/22</span></li>
+							<li><a href="#">博雅互动义工队中秋探访敬老院，带关爱走进夕阳生活</a><span>09/25</span></li>
+							<li><a href="#">博雅互动公布2018年中期业绩，巩固现有市场地位，加大力度拓展海外市场及其他棋牌游戏业务</a><span>08/23</span></li>
+						</ul>
+						<!-- <div class="more">
+							<a href="#">MORE<sup>+</sup></a>
+						</div> -->
+
+					</div>
+					<div class="position">
+						<div class="title">
+							<h1>社会招聘</h1>
+							<span>BOYAA JOBS</span>
+						</div>
+						<div class="zhaoping">
+							<h4>社会招聘岗位:</h4>
+							<ul>
+								<li><a href="#">PHP开发工程师</a></li>
+								<li><a href="#">C++开发工程师</a></li>
+								<li><a href="#">LUA开发工程师</a></li>
+								<li><a href="#">大数据开发工程师</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+		<div class="footer">
+			<div class="w">
+				<div class="text">
+					<ul>
+						<li><a href="#">网站地图</a>&nbsp;|</li>
+						<li><a href="#">&nbsp;免费声明</a>&nbsp;|</li>
+						<li><a href="#">&nbsp;监督举报</a></li>
+					</ul>
+					<p>Copyright © 2004 - 2019 博雅互动(Boyaa Interactive)粤ICP备05062536号</p>
+					<p>网络文化经营许可证：粤网文[2015]1991-405号 | 互联网出版许可证：新出网证（粤）字062号 | 增值电信业务经营许可证：粤B2-20110513</p><span class="guokui"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+</body>
+</html>

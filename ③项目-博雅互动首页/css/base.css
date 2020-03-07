@@ -1,0 +1,47 @@
+/*放页面初始化样式*/
+/*页面初始化样式开始*/
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color:#818496;
+}
+a:hover{
+	color:white;
+}
+li{
+	list-style: none;
+}
+img{
+	vertical-align: bottom;
+}
+body{
+	font-size:14px;
+}
+/*浮动类*/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+/*清除浮动类*/
+.clearfix::after{
+	content:".";
+	display: block;
+	line-height: 0px;
+	height:0;
+	clear:both;
+	visibility: hidden;
+}
+.clearfix{
+	*zoom:1;
+}
+/*版心*/
+.w{
+	width: 1000px;
+	margin: 0 auto;
+}
+/*页面初始化样式结束*/

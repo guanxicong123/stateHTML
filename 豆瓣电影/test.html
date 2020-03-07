@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>豆瓣电影</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		li{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		.w{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.douban{
+		}
+		.nav{
+			height: 30px;
+			background: #545652;
+			/*width: 1200px;*/
+			/*position: fixed;*/
+			/*top: 0;
+			left: 0;*/
+		}
+		.nav .head{
+			/*overflow: hidden;*/
+			/*width: 1200px;*/
+		}
+		.nav .left{
+			width: 600px;
+		}
+		.nav .left ul{
+			/*float: left;*/
+			width: 600px;
+		}
+		.nav .left ul li{
+			width: 50px;
+			display: inline-block;
+			/*float: left;*/
+			text-align: center;
+			line-height: 30px;
+		}
+		.nav .left ul li a,
+		.nav .right ul li a{
+			color: #d5d5d5;
+			font-size: 12px;
+
+		}
+		.nav .left ul li a:hover,
+		.nav .right ul li a:hover{
+			color: #fff;
+		}
+		.nav .right{
+			float: right;
+			/*position: absolute;
+			top: 0;
+			right: 0;*/
+			width: 200px;
+		}
+		.nav .right ul{
+			/*overflow: hidden;*/
+		}
+		.nav .right ul li{
+			/*position: relative;*/
+			float: left;
+			margin-right: 20px;
+		}
+		.nav .right ul li.drop{
+			position: relative;
+
+		}
+		.down{
+			width: 250px;
+			height: 500px;
+			background: red;
+			overflow: hidden;
+			text-align: center;
+
+			position: absolute;
+			left: -50px;
+
+		}
+		.down .doubanimg{
+			width: 100px;
+			height: 130px;
+			margin: 100px auto 30px;
+		}
+		.down .ewm{
+
+		}
+
+
+
+		.denglu{
+			float: right;
+			margin: 0 12px;
+		}
+		.denglu a{
+			padding: 0 12px;
+			display: inline-block;
+
+
+		}
+		.download{
+			float: right;
+			padding: 0 12px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="douban">
+		<div class="nav">
+		<div class="head">
+			<!-- <div class="right">
+				<ul>
+					<li class="drop">
+						<a href="#">下载豆瓣客户端</a>
+						<div class="down">
+							<div class="doubanimg">
+								<img src="images/nav_doubanapp_6.png">
+								豆瓣
+							</div>
+							<div class="ewm">
+								<img src="images/nav_doubanapp_6_qrcode.png">
+								<div>
+									<a href="#">iphonr</a> .
+									<a href="#">Android</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li><a href="#">登陆/注册</a></li>
+				</ul>
+			</div> -->
+			<div class="denglu">
+				<a href="#">登录/注册</a>
+			</div>
+			<div class="download">
+				<a href="#">下载豆瓣客户端</a>
+			</div>
+			<div class="left">
+				<ul>
+					<li><a href="#">豆瓣</a></li>
+					<li><a href="#">读书</a></li>
+					<li><a href="#">电影</a></li>
+					<li><a href="#">音乐</a></li>
+					<li><a href="#">同城</a></li>
+					<li><a href="#">小组</a></li>
+					<li><a href="#">阅读</a></li>
+					<li><a href="#">FM</a></li>
+					<li><a href="#">时间</a></li>
+					<li><a href="#">豆品</a></li>
+					<li><a href="#">更多</a></li>
+				</ul>
+			</div>
+			
+			</div>
+		</div>
+	</div>
+</body>
+</html>

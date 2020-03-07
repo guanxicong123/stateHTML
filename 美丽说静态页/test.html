@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>美丽说静态页</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			/*设置最小宽度,不然会当窗口小化得时候,格式会换行*/
+			/*width: 1200px;*/
+			/*字体大小,字体颜色 字体格式*/
+			font-size: 12px;
+			color: black;
+			font-family: '微软雅黑';
+			color: #666666;		
+		}
+		.w{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		li{
+			list-style: none;
+		}
+		.q{
+
+		}
+		.box{
+			/*height: 200px;*/
+
+
+		}
+		.box .topNav{
+			height: 30px;
+			font-size: 16px;
+			/*color: #666666;*/
+			background-color: #f8f8f8;
+			text-align: right;
+			/*行高设置在div中*/
+			line-height: 30px;
+
+		}
+		.box .topNav ul{
+			float: right;
+			color: #888888;
+		}
+		.box .topNav ul li{
+			/*list-style-type  这是在li中设置的*/
+			list-style-type: none;
+			/*height: 30px;*/
+			/*把行高设置在div中*/
+			display: inline-block;
+
+			/*border-right: 1px dotted #cccccc;*/
+			/*line-height: 30px;*/
+			/*padding-right: 5px;*/
+
+		}
+		.box .topNav ul li a{
+			/*margin-right: 15px;*/
+			display: block;
+			/*这里添加颜色后,就不会出现a:hover的颜色变化*/
+			/*那怎么改变a的初始颜色*/
+			/*在body中定下字体颜色*/
+			/*color: #666666;*/
+			text-decoration: none;
+			/*a标签的行高不会影响到文字*/
+			line-height: 20px;/*是把虚线变短的操作*/
+			border-right: 1px dotted #cccccc;
+			/*color: #666666;*/
+			/*在a标签里面加边框,在设padding*/
+			/*在padding:0 15px左右各15px*/
+			padding:0 15px;  
+			
+		}
+		a{
+			text-decoration: none;
+
+		}
+		/*link和visited之间记得加 ','  隔开*/
+		/*a:link ,a:visited{
+			color: #666666;
+		}*/
+		/*要把a:hover写在link好visited下面*/
+		a:hover{
+			color: #ff3366;
+		}
+		
+		.box .topNav .drop{
+			position: relative;
+
+			
+		}
+		.box .topNav .drop:hover .down{
+			display: block;
+		}
+		.box .topNav .drop .down{
+			position: absolute;
+			display: block;
+			height: 85px;
+			left: 5px;
+			text-align: left;
+			width: 100px;
+			background-color: #f8f8f8;
+			/*实现在鼠标未在drop上的时候,不显示,当鼠标出现在drop上后,display:block,*/
+			/*实现一个出现隐藏的功能下拉列表*/
+			display: none;
+		}
+
+		.box .topNav ul li:last-child a{
+			border-right: 0;
+		}
+		.box .topNav .drop .down li a{
+			border-right: 0;
+		}
+		.box .topNav ul li a span{
+			background: url(images/top_nav.png);
+			height: 18px;
+			width: 25px;
+			/*因为span是行内元素,如果要设计宽高,就要display:inline-block*/
+			display: inline-block;
+			vertical-align: sub;
+		}
+		.box .topNav ul li a .qq{
+			background-position: -50px 0px;
+		}
+		.box .topNav ul li a .shoucang{
+			background-position: -75px 0px;
+		}
+		.box .topNav ul li a .bcart{
+			background-position: -100px 0px;
+		}
+		.box .topNav ul li a .myList{
+			background-position: -125px 0px;
+		}
+		.box .topNav ul li a .helpCen{
+			background-position: -175px 0px;
+		}
+		.box .topContent{
+			/*border: 1px solid red;*/
+			height: 157px;
+		}
+		.box .topContent .logo{
+			display: inline-block;
+		}
+		.box .topContent .content{
+			/*margin-left: 100px;*/
+			margin: 10px 60px;
+			height: 100px;
+			display: inline-block;
+		}
+		.box .topContent .content .ssLei{
+			color: #7f7eb5;
+		}
+		.box .topContent .content .ssLei a{
+			width: 68px;
+			height: 34px;
+			text-align: center;
+			line-height: 34px;
+			display: inline-block;
+		}
+		.box .topContent .content .ssLei a:hover{
+			background-color: #ff3366;
+			color: #fff;
+		}
+		.box .topContent .content .shousuo{
+			/*width: 550px;*/
+			/*height: 30px;*/
+			height: 34px;
+			overflow: hidden;
+		}
+		.box .topContent .content .shousuo input{
+			width: 550px;
+			height: 30px;
+			border: 2px solid #ff3366;
+			float: left;
+		}
+		.box .topContent .content .shousuo input:focus{
+			outline: none;
+		}
+		.box .topContent .content .shousuo a{
+			display: inline-block;
+			width: 80px;
+			height: 34px;
+			float: left;
+
+			/*用背景图片无法做到居中,需要在a里面嵌入一个元素,
+			那就直接用img标签来做这个图片*/
+			text-align: center;
+			line-height: 40px;
+			background: #ff3366;
+			color: #666666;
+		}
+		.box .topContent .content ul{
+
+		}
+		.box .topContent .content ul li{
+			display: inline-block;
+		}
+		.red{
+			color: #ff3366;
+		}
+		.box .topContent .meilishuo_app{
+			vertical-align: bottom;
+			float: right;
+		}
+		.box .nav{
+			margin-top: 10px;
+		}
+		.box .nav ul{
+
+			height: 50px;
+		}
+		.box .nav ul li{
+			float: left;
+			/*在li里面去确定height,这样就防止a标签加边框后超出显示,盖住下划线,当然需要盖住就另当别论*/
+			height: 50px;
+			margin-right: 65px;
+
+			/*border: 1px solid red;*/
+			
+		}
+		.box .nav ul li a{
+			display: block;
+			/*把边距计算下去,防止盖住下面的hr的情况出现.*/
+			height: 48px;
+			font-size: 20px;
+			color: #333333;
+		}
+		.box .nav ul li a:hover{
+			border-bottom: 2px solid #fd3366;
+		}
+		.box .banner{
+			/*width: 2400px;*/
+			height: 400px;
+			/*margin: 10px 0 0 100px;*/
+			margin-top: 10px;
+			
+		}
+		.box .banner .banner_tu{
+			width: 2400px;
+		}
+		.box .banner ul{
+			overflow: hidden;
+			position: relative;
+		}
+		.box .banner ul li{
+			float: left;
+		}
+		.box .banner .lr{
+			clear: both;
+			height: 44px;
+			width: 1200px;
+			/*标准流可以盖住float起来的内容*/
+			/*margin-top: -100px;*/
+			/*absolute 是绝对定位,不会占原来的位置*/
+			position: absolute;
+			bottom: 222px;
+
+
+		}
+		.box .banner .previous{
+		}
+		.box .next{
+			/*要1200减两张图片,和行内块元素之间的空隙4px;*/
+			/*margin-left: 1124px;*/
+			/*margin-top: 100px;*/
+			position: absolute;
+			/*用position不会存在行内块元素之间的空隙4px,而且是相对lr,就不用再减去previous里面的*/
+			left: 1164px;
+		}
+		
+		.box ul.dian{
+			/*clear: both;*/
+			width: 150px;
+			height: 11px;
+			position: absolute;
+			bottom: 60px;
+			left: 645px;
+		}
+		.box ul.dian li{
+			width: 11px;
+			height: 11px;
+			border-radius: 50%;
+			background: #fff;
+			margin-right: 10px;
+		}
+		.box .middle{
+			
+			/*height: 400px;*/
+			margin-top: 5px;
+			overflow: hidden;
+			/*border: 1px solid red;*/
+			/*因为之后要轮播,所以要用img标签*/
+			/*background: url(images/banner01.jpg) no-repeat ;*/
+			/*line-height: 400px;*/
+		}
+		.box .middle .kinds{
+			margin-top: 30px;
+		}
+		.box .middle .kinds ul{
+			height: 174px;
+		}
+		.box .middle .kinds ul li{
+			float: left;
+		}
+		.box .middle .kinds img{
+			width: 300px;
+		}
+		/*用span不能,文字不能出来*/
+		/*.box .middle .nav_m ul li a span{
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			border: 2px solid red
+		}*/
+		.box .middle .nav_m{
+			height: 50px;
+			margin-top: 20px;
+		}
+		
+		.box .middle .nav_m ul{
+			width: 300px;
+			margin: 0 auto;
+		}
+		.box .middle .nav_m ul li{
+			float: left;
+			margin-left: 30px;
+			/*text-align: center;*/
+		}
+		.box .middle .nav_m ul li a{
+			font-size: 20px;
+			color: black;
+		}
+		.box .middle .nav_m ul li a:hover{
+			color: #e40045;
+		}
+		.box .middle .nav_m ul li .active{
+			width: 30px;
+			height: 3px;
+			background: red;
+			margin: 15px auto 0;
+
+			display: none;
+
+		}
+		.box .middle .nav_m ul li a:hover+.active{
+			display: block;
+		}
+		.box .middle .check{
+			color: #666666;
+			font-size: 14px;
+			line-height: 28px;
+			float: right;
+		}
+		.box .middle .content{
+			overflow: hidden;
+		}
+		.box .middle .content ul{
+
+		}
+		.box .middle .content ul li{
+			margin-right: 20px;
+			width: 224px;
+			height: 415px;
+		}
+		.box .middle .content ul li:nth-child(5n){
+			margin-right: 0px;
+		}
+		.box .middle .content ul li img{
+			width: 224px;
+			height: 340px;
+		}
+		.box .middle .content ul li .liMid{
+			width: 224px;
+			height: 16px;
+			margin-top: 15px;
+		}
+		.box .middle .content ul li .liMid .rmb{
+			color: #ff4174;
+			font-size:16px;
+		}
+		.box .middle .content ul li .liMid img{
+			width: 16px;
+			height: 16px;
+			/*右浮的时候.谁先浮,谁就在最右边.*/
+			float: right;
+		}
+		.box .middle .content ul li .liMid .scs{
+			float: right;
+			display: inline-block;
+			font-size: 14px;
+			color: #a19d9a;
+		}
+		.box .middle .content ul li .liBut{
+			width: 224px;
+			height: 18px;
+			margin-top: 12px;
+			
+			color: #868686;
+			font-size: 14px;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+		/*这是用图片写的方法*/
+		.box .middle .content ul li .liBut img{
+			width: 40px;
+			height: 16px;
+			vertical-align: sub;
+		}
+		/*如果在文字前面做一个图标,*/
+		/*两种方法,一是在文字前面加一个::before伪类,在这个伪类里面作为背景图片输出.记得background-size:cover;图片铺满所有位置.*/
+		/*二是用img,*/
+		/*但是想要实现,超出的文字用省略号"...."代替,就一定不能给那段文字单独再加white-space:nowrap;,一定要写到包括这个图片图标的div上去设置*/
+
+		/*这是用::before写的方法*/
+		/*.box .middle .content ul li .liBut::before{
+			content: "";
+			width: 40px;
+			height: 16px;
+			display: inline-block;
+			background: url(images/youxuan.png);
+			background-size: cover;
+			vertical-align: sub;
+		}*/
+		/*不能给文字单独加white-space:nowrap,因为这会只让文字在一行显示.*/
+		/*.box .middle .content ul li .liBut .introduction{
+			color: #868686;
+			width: 225px;
+			font-size: 14px;
+			display: inline-block;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+			overflow: hidden;
+		}
+*/		
+		.box .middle .content ul li{
+			float: left;
+		}
+		.box .middle .middle_bottom .title{
+			height: 30px;
+			overflow: hidden;
+		}
+		.box .middle .middle_bottom .title h1{
+			float: left;
+		}
+		.box .middle .middle_bottom .title .check{
+			float: right;
+		}
+		.box .middle .middle_bottom .block{
+			margin-top: 30px;
+			overflow: hidden;
+		}
+		.box .middle .middle_bottom .block li{
+			width: 390px;
+			height: 374px;
+			margin-left: 12px;
+			float: left;
+			border: 1px solid #eeeeee;
+		}
+		.box .middle .middle_bottom .block li:first-child{
+			margin-left: 0px;
+		}
+		/*.box .middle .middle_bottom .block li .sum a{
+			display: block;
+		}*/
+		.box .middle .middle_bottom .block li .sum img{
+			width: 390px;
+			height: 210px;
+			display: block;
+		}
+		.box .middle .middle_bottom .block li .classify{
+			width: 380px;
+			height: 148px;
+			overflow: hidden;
+			/*因为后面要设外边距,不能实现居中,最前面那个*/
+			margin:15px auto 0;
+
+		}
+		
+		.box .middle .middle_bottom .block li ul.classify li{
+			float: left;
+			width: 120px;
+			height: 148px;
+			margin-left: 6px;
+			text-align: center;
+
+		}
+		
+		.box .middle .middle_bottom .block li ul.classify li:first-child{
+			margin: 0px;
+		}
+		.box .middle .middle_bottom .block li ul.classify li img{
+			width: 120px;
+			height: 130px;
+		}
+		.box .footer{
+			margin-top: 50px;
+			background-color: #f5f5f5;
+		}
+		.box .footer .service{
+			border-top:1px solid #dddddd;
+			border-bottom:1px solid #dddddd;
+			overflow: hidden;
+		}
+		.box .footer .service ul{
+			/*不知道为什么,不用浮动会掉下来,应该也是儿子影响了*/
+			/*display: inline-block;*/
+			float: left;
+			margin-top: 40px;
+			/*overflow: hidden;*/
+
+		}
+		.box .footer .service ul h2{
+			margin-bottom: 20px;
+		}
+		.box .footer .service ul li{
+			margin-bottom: 25px;
+		}
+		.box .footer .service ul.shang,
+		.box .footer .service ul.out,
+		.box .footer .service ul.attention{
+			margin-left: 100px;
+		}
+		.box .footer .service ul li a{
+			color: #666666;
+		}
+		.box .footer .service ul li a:hover{
+			color: #ff3366;
+		}
+		.box .footer .service ul.attention li.xl a::before{
+			content: "";
+			width: 20px;
+			height: 18px;
+			display: inline-block;
+			background-size: cover;
+			vertical-align: sub;
+			background: url(images/footer-icon.png) left top;
+		} 
+		.box .footer .service ul.attention li.QQ a::before{
+			content: "";
+			width: 20px;
+			height: 18px;
+			display: inline-block;
+			background-size: cover;
+			vertical-align: sub;
+			background: url(images/footer-icon.png) -28px 0px;
+		} 
+		.box .footer .service ul.attention li.tx a::before{
+			content: "";
+			width: 20px;
+			height: 18px;
+			display: inline-block;
+			background-size: cover;
+			vertical-align: sub;
+			background: url(images/footer-icon.png) no-repeat -55px 0;
+		} 
+		.box .footer .fuwuhao{
+			/*display: inline-block;*/
+			margin-top: 40px;
+			margin-left: 200px;
+			float: left;
+			margin-right: 100px;
+			text-align: center;
+		}
+		.box .footer .download{
+			margin-top: 40px;
+			text-align: center;
+			float: left;
+		}
+		.box .footer img{
+			margin-top: 30px;
+		}
+
+		.box .footer .foot{
+			color: #666666;
+			text-align: center;
+		}
+		.box .footer .foot p{
+			margin-top: 10px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="topNav w">
+			<ul>
+				<li><a href="#"><span class="weixin"></span>微信登陆</a></li>
+				<li><a href="#"><span class="qq"></span>QQ登陆</a></li>
+				<li><a href="#">登陆</a></li>
+				<li><a href="#">注册</a></li>
+				<li class="drop">
+					<a href="#"><span class="shoucang"></span>我的收藏</a>
+					<ul class="down">
+						<li><a href="#">收藏宝贝</a></li>
+						<li><a href="#">收藏店铺</a></li>
+					</ul>
+					
+				</li>
+				<li><a href="#"><span class="bcart"></span>我的购物车</a></li>
+				<li><a href="#"><span class="myList"></span>我的订单</a></li>
+				<li class="drop">
+				<a href="#">帮助中心<span class="helpCen"></span></a>
+					<ul class="down">
+						<li><a href="#">买家服务</a></li>
+						<li><a href="#">商家服务</a></li>
+						<li><a href="#">规则中心</a></li>
+					</ul>
+				</li>
+				<li><a href="#">商家后台</a></li>
+			</ul>
+		</div>
+		<div class="topContent w">
+			<img src="images/logo.png" class="logo" width="218" height="62">
+			<div class="content">
+				<div class="ssLei">
+					<a href="#">宝贝</a>
+					<a href="#">店铺</a>
+				</div>
+				<div class="shousuo">
+					<input type="shousuo" class="input">
+					<a href="#" class="shousuo_a">
+						<img src="images/fangdajing.png">
+					</a>
+				</div>
+				<ul class="under">
+					<li><a href="#" class="red">连衣裙</a></li>
+					<li><a href="#">运动鞋</a></li>
+					<li><a href="#" class="red">雪纺三</a></li>
+					<li><a href="#" class="red">衬衫</a></li>
+					<li><a href="#">薄外套</a></li>
+					<li><a href="#">T恤</a></li>
+					<li><a href="#">套装</a></li>
+					<li><a href="#">牛仔裤</a></li>
+					<li><a href="#" class="red">小白鞋</a></li>
+					<li><a href="#">风衣</a></li>
+					<li><a href="#" class="red">绑带凉鞋</a></li>
+					<li><a href="#">粗跟单鞋</a></li>
+				</ul>
+			</div>
+			<img src="images/meilishuo_app.gif"  class="meilishuo_app">
+		</div>
+		<div class="nav w">
+			<ul>
+				<li><a href="#"><strong>首页</strong></a></li>
+				<li><a href="#"><strong>上衣</strong></a></li>
+				<li><a href="#"><strong>裙子</strong></a></li>
+				<li><a href="#"><strong>裤子</strong></a></li>
+				<li><a href="#"><strong>女鞋</strong></a></li>
+				<li><a href="#"><strong>包包</strong></a></li>
+				<li><a href="#"><strong>配饰</strong></a></li>
+				<li><a href="#"><strong>美妆</strong></a></li>
+				<li><a href="#"><strong>男友</strong></a></li>
+				<li><a href="#"><strong>童装</strong></a></li>
+				<li><a href="#"><strong>家居</strong></a></li>
+			</ul>
+		</div>
+			<hr>
+			<!-- 让其在版心,还是需要加W,然后在再嵌入一层div,最外面设置成版心,里面设置成banner宽度 -->
+		<div class="banner w">
+
+				<div class="banner_tu">
+					<ul>
+						<li>
+							<a href="#"><img src="images/banner01.jpg"  ></a>
+						</li>
+						<!-- <li>
+							<a href="#"><img src="images/banner02.jpg" ></a>
+						</li> -->
+					</ul>
+					
+					
+				</div>
+				<div class="lr">
+					<img src="images/prev.png" class="previous">
+					<img src="images/next.png" class="next">
+				</div>
+				<ul class="dian">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		<div class="middle w">
+			<div class="kinds">
+				<ul>
+					<li><a href="#"><img src="images/kinds01.png" ></a></li>
+					<li><a href="#"><img src="images/kinds02.png" ></a></li>
+					<li><a href="#"><img src="images/kinds03.png" ></a></li>
+					<li><a href="#"><img src="images/kinds04.png" ></a></li>
+				</ul>
+			</div>
+			<div class="nav_m">
+				<ul>
+					<li>
+						<a href="#" >今日新品</a>
+						<div class="active"></div>
+					</li>
+					<li>
+						<a href="#">一周热销</a>
+						<div class="active"></div>
+					</li>
+				</ul>
+				<a href="#" class="check">查看更多></a>
+			</div>
+			<div class="content">
+				<ul>
+					<li>
+						<a href="#"><img src="images/goods01.png"></a>
+						<div class="liMid">
+							<span class="rmb">¥93.75</span>
+							<span class="scs">250</span>
+							<img src="images/wjx.png">
+						</div>
+						<div class="liBut">
+						<!-- 这是用图片写 -->
+						<!-- 用img来写像素会比较准确 -->
+							<img src="images/youxuan.png">
+							<!-- 当不用给文字单独加样式的时候,这个span标签就会失去意义了. -->
+							<span class="introduction">小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span>
+						</div>
+					</li>
+					<li>
+						<a href="#"><img src="images/goods02.png"></a>
+						<div class="liMid">
+							<span class="rmb">¥93.75</span>
+							<span class="scs">250</span>
+							<img src="images/wjx.png">
+						</div>
+						<div class="liBut">
+						<!-- 这是用图片写 -->
+						<!-- 用img来写像素会比较准确 -->
+							<img src="images/youxuan.png">
+							<!-- 当不用给文字单独加样式的时候,这个span标签就会失去意义了. -->
+							<span class="introduction">小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span>
+						</div>
+					</li>
+					<li>
+						<a href="#"><img src="images/goods03.png"></a>
+						<div class="liMid">
+							<span class="rmb">¥93.75</span>
+							<span class="scs">250</span>
+							<img src="images/wjx.png">
+						</div>
+						<div class="liBut">
+						<!-- 这是用图片写 -->
+						<!-- 用img来写像素会比较准确 -->
+							<img src="images/youxuan.png">
+							<!-- 当不用给文字单独加样式的时候,这个span标签就会失去意义了. -->
+							<span class="introduction">小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span>
+						</div>
+					</li>
+					<li>
+						<a href="#"><img src="images/goods04.png"></a>
+						<div class="liMid">
+							<span class="rmb">¥93.75</span>
+							<span class="scs">250</span>
+							<img src="images/wjx.png">
+						</div>
+						<div class="liBut">
+						<!-- 这是用图片写 -->
+						<!-- 用img来写像素会比较准确 -->
+							<img src="images/youxuan.png">
+							<!-- 当不用给文字单独加样式的时候,这个span标签就会失去意义了. -->
+							<span class="introduction">小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span>
+						</div>
+					</li>
+					<li>
+						<a href="#"><img src="images/goods05.png"></a>
+						<div class="liMid">
+							<span class="rmb">¥93.75</span>
+							<span class="scs">250</span>
+							<img src="images/wjx.png">
+						</div>
+						<div class="liBut">
+						<!-- 这是用图片写 -->
+						<!-- 用img来写像素会比较准确 -->
+							<img src="images/youxuan.png">
+							<!-- 当不用给文字单独加样式的时候,这个span标签就会失去意义了. -->
+							<span class="introduction">小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span>
+						</div>
+					</li>
+					<li>
+						<a href="#"><img src="images/goods06.png"></a>
+						<div class="liMid">
+							<span class="rmb">¥93.75</span>
+							<span class="scs">250</span>
+							<img src="images/wjx.png">
+						</div>
+						<div class="liBut">
+						<!-- 这是用图片写 -->
+						<!-- 用img来写像素会比较准确 -->
+							<img src="images/youxuan.png">
+							<!-- 当不用给文字单独加样式的时候,这个span标签就会失去意义了. -->
+							<span class="introduction">小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span>
+						</div>
+					</li>
+					<li>
+						<a href="#"><img src="images/goods07.png"></a>
+						<div class="liMid">
+							<span class="rmb">¥93.75</span>
+							<span class="scs">250</span>
+							<img src="images/wjx.png">
+						</div>
+						<div class="liBut">
+						<!-- 这是用图片写 -->
+						<!-- 用img来写像素会比较准确 -->
+							<img src="images/youxuan.png">
+							<!-- 当不用给文字单独加样式的时候,这个span标签就会失去意义了. -->
+							<span class="introduction">小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span>
+						</div>
+					</li>
+					<li>
+						<a href="#"><img src="images/goods08.png"></a>
+						<div class="liMid">
+							<span class="rmb">¥93.75</span>
+							<span class="scs">250</span>
+							<img src="images/wjx.png">
+						</div>
+						<div class="liBut">
+						<!-- 这是用图片写 -->
+						<!-- 用img来写像素会比较准确 -->
+							<img src="images/youxuan.png">
+							<!-- 当不用给文字单独加样式的时候,这个span标签就会失去意义了. -->
+							<span class="introduction">小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span>
+						</div>
+					</li>
+					<li>
+						<a href="#"><img src="images/goods09.png"></a>
+						<div class="liMid">
+							<span class="rmb">¥93.75</span>
+							<span class="scs">250</span>
+							<img src="images/wjx.png">
+						</div>
+						<div class="liBut">
+						<!-- 这是用图片写 -->
+						<!-- 用img来写像素会比较准确 -->
+							<img src="images/youxuan.png">
+							<!-- 当不用给文字单独加样式的时候,这个span标签就会失去意义了. -->
+							<span class="introduction">小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span>
+						</div>
+					</li>
+					<li>
+						<a href="#"><img src="images/goods10.png"></a>
+						<div class="liMid">
+							<span class="rmb">¥93.75</span>
+							<span class="scs">250</span>
+							<img src="images/wjx.png">
+						</div>
+						<div class="liBut">
+						<!-- 这是用图片写 -->
+						<!-- 用img来写像素会比较准确 -->
+							<img src="images/youxuan.png">
+							<!-- 当不用给文字单独加样式的时候,这个span标签就会失去意义了. -->
+							<span class="introduction">小清新新款韩版气质收腰显瘦百搭蕾丝边V领木耳边镂空休闲连衣裙</span>
+						</div>
+					</li>
+					
+				</ul>
+
+			</div>
+			
+			<div class="middle_bottom">
+				<div class="title">
+					<h1>好物组货</h1>
+					<a href = "#" class="check">查看更多></a>
+				</div>
+				<ul class="block">
+					<li>
+						<a href="#" class="sum"><img src="images/newProduct01.png"></a>
+						<ul class="classify">
+							<li>
+								<a href="#"><img src="images/dress01.png"></a>
+								<span>¥100.00</span>
+							</li>
+							<li>
+								<a href="#"><img src="images/dress02.png"></a>
+								<span>¥100.00</span>
+							</li>
+								<li>
+								<a href="#"><img src="images/dress03.png"></a>
+								<span>¥100.00</span>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#" class="sum"><img src="images/newProduct02.png"></a>
+						<ul class="classify">
+							<li>
+								<a href="#"><img src="images/pants01.png"></a>
+								<span>¥100.00</span>
+							</li>
+							<li>
+								<a href="#"><img src="images/pants02.png"></a>
+								<span>¥100.00</span>
+							</li>
+								<li>
+								<a href="#"><img src="images/pants03.png"></a>
+								<span>¥100.00</span>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#" class="sum"><img src="images/newProduct03.png"></a>
+						<ul class="classify">
+							<li>
+								<a href="#"><img src="images/shoes01.png"></a>
+								<span>¥100.00</span>
+							</li>
+							<li>
+								<a href="#"><img src="images/shoes02.png"></a>
+								<span>¥100.00</span>
+							</li>
+								<li>
+								<a href="#"><img src="images/shoes03.png"></a>
+								<span>¥100.00</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<div class="footer">
+			<div class="w">
+				<div class="service">
+					<ul class="mai">
+						<h2>买家帮助</h2>
+						<li><a href="#">新手指南</a></li>
+						<li><a href="#">服务保障</a></li>
+						<li><a href="#">常见问题</a></li>
+						<li><a href="#">风险监测</a></li>
+					</ul>
+					<ul class="shang">
+						<h2>商家帮助</h2>
+						<li><a href="#">供货商招募</a></li>
+						<li><a href="#">商家后台</a></li>
+					</ul>
+					<ul class="out">
+						<h2>关于我们</h2>
+						<li><a href="#">关于美丽说</a></li>
+						<li><a href="#">联系我们</a></li>
+					</ul>
+					<ul class="attention">
+						<h2>关注我们</h2>
+						<li class="xl"><a href="#">新浪微博</a></li>
+						<li class="QQ"><a href="#">QQ空间</a></li>
+						<li class="tx"><a href="#">腾讯微博</a></li>
+					</ul>
+					<div class="fuwuhao">
+						<h2>美丽说微信服务号</h2>
+						<img src="images/weixin-server-qrcode.jpg">
+					</div>
+					<div class="download">
+						<h2>美丽说客户端下载</h2>
+						<img src="images/meili-app-qrcode140X140.png" width="100" height="100">
+					</div>
+				</div>
+				<div class="foot">
+					<p>Copyright ©2017 xxxxxxxx.com 电信与信息服务业务经营许可证xxxxxx号 经营性网站备案信息</p>
+					<p>京ICP备xxxxxxxx号 京公网安备xxxxxxxx 客服电话：xxxx-xxx-xxx 文明办网文明上网举报电话：xxx-xxxxxxxx 违法不良信息举报中心</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
